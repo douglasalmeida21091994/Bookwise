@@ -37,45 +37,7 @@
 
     <main class="mx-auto max-w-screen-lg py-4 px-4 space-y-5">
 
-        <form class="w-full flex space-x-2 mt-6" action="">
-
-            <input type="text" name="pesquisar" id="pesquisar" class="border-stone-800 rounded-md bg-stone-900 text-ml focus:outline-none px-2 py-1" placeholder="Pesquisar...">
-            <button type="submit">🔎</button>
-
-        </form>
-
-        <section class="space-y-4">
-
-            <!-- LIVRO -->
-            <div class="w-1/3 p-2 rounded border-stone-800 border-2 bg-stone-900">
-
-                <div class="flex" >
-
-                    <div class="w-1/3">
-                        imagem
-                    </div>
-
-                    <div>
-                        <div class="font-semibold">
-                            titulo
-                        </div>
-                        <div class="text-xs italic">
-                            autor
-                        </div>
-                        <div class="text-xs italic">
-                            ⭐⭐⭐ (3 Avaliações)
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-sm">
-                    descrição
-                </div>
-
-            </div>
-
-        </section>
+        
 
     </main>
 
