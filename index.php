@@ -8,26 +8,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-stone-950 text-stone-400">
+<body class="bg-stone-950 text-stone-200">
 
-    <header class="mx-auto max-w-screen-lg">
+    <header class="bg-stone-900">
 
-        <nav class="bg-red-600 flex justify-between  px-8">
+        <nav class="mx-auto max-w-screen-lg flex justify-between px-8 py-4">
 
-            <div>Book Wise</div>
+            <div class="font-bold text-xl tracking-wide">Book Wise</div>
 
-            <ul>
+            <ul class="flex space-x-4 font-bold">
                 <li>
-                    <a href="/">Explorar</a>
+                    <a href="/" class="text-lime-500">Explorar</a>
                 </li>
                 <li>
-                    <a href="/">Meus Livros</a>
+                    <a href="/meuslivros.php" class="hover:underline">Meus Livros</a>
                 </li>
             </ul>
 
             <ul>
                 <li>
-                    <a href="/">Fazer Login</a>
+                    <a href="/login.php" class="hover:underline">Fazer Login</a>
                 </li>
             </ul>
 
