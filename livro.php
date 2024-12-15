@@ -1,3 +1,24 @@
+<?php
+
+require 'dados.php';
+
+$id = $_REQUEST['id'];
+
+$filtrado = array_filter($livros, function ($l) use ($id) {
+
+    return $l['id'] == $id;
+});
+
+$livro = array_pop($filtrado);
+
+// echo "<pre>";
+
+// var_dump($livro);
+
+// echo "</pre>";
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,158 +58,37 @@
 
     <main class="mx-auto max-w-screen-lg py-4 px-4 space-y-5">
 
-    <form class="w-full flex space-x-2 mt-6" action="">
+        <?= $livro['titulo'] ?>
 
-            <input type="text" name="pesquisar" id="pesquisar" class="border-stone-800 rounded-md bg-stone-900 text-ml focus:outline-none px-2 py-1" placeholder="Pesquisar...">
-            <button type="submit">🔎</button>
+        <!-- LIVRO -->
+        <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
 
-        </form>
-        
-        <!-- colocando versão mobile com tailwind se quiser mudar o bg poderia serr -> bg:lg-blue-900 ou seja, apenas no lg seria essa cor -->
-        <section class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div class="flex">
 
-            <!-- LIVRO -->
-            <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
-
-                <div class="flex">
-
-                    <div class="w-1/3">
-                        imagem
-                    </div>
-
-                    <div>
-                        <a href="/livro.php" class="font-semibold hover:underline">
-                            titulo
-                        </a>
-                        <div class="text-xs italic">
-                            autor
-                        </div>
-                        <div class="text-xs italic">
-                            ⭐⭐⭐ (3 Avaliações)
-                        </div>
-                    </div>
-
+                <div class="w-1/3">
+                    imagem
                 </div>
 
-                <div class="text-sm">
-                    descrição
-                </div>
-
-            </div>
-            <!-- LIVRO -->
-            <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
-
-                <div class="flex">
-
-                    <div class="w-1/3">
-                        imagem
+                <div class="space-y-1">
+                    <a href="/livro.php?id=<?= $livro['id'] ?>" class="font-semibold hover:underline">
+                        <?= $livro['titulo'] ?>
+                    </a>
+                    <div class="text-xs italic">
+                        <?= $livro['autor'] ?>
                     </div>
-
-                    <div>
-                        <a href="/livro.php" class="font-semibold hover:underline">
-                            titulo
-                        </a>
-                        <div class="text-xs italic">
-                            autor
-                        </div>
-                        <div class="text-xs italic">
-                            ⭐⭐⭐ (3 Avaliações)
-                        </div>
+                    <div class="text-xs italic">
+                        ⭐⭐⭐ (3 Avaliações)
                     </div>
-
-                </div>
-
-                <div class="text-sm">
-                    descrição
-                </div>
-
-            </div>
-            <!-- LIVRO -->
-            <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
-
-                <div class="flex">
-
-                    <div class="w-1/3">
-                        imagem
-                    </div>
-
-                    <div>
-                        <a href="/livro.php" class="font-semibold hover:underline">
-                            titulo
-                        </a>
-                        <div class="text-xs italic">
-                            autor
-                        </div>
-                        <div class="text-xs italic">
-                            ⭐⭐⭐ (3 Avaliações)
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-sm">
-                    descrição
-                </div>
-
-            </div>
-            <!-- LIVRO -->
-            <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
-
-                <div class="flex">
-
-                    <div class="w-1/3">
-                        imagem
-                    </div>
-
-                    <div>
-                        <a href="/livro.php" class="font-semibold hover:underline">
-                            titulo
-                        </a>
-                        <div class="text-xs italic">
-                            autor
-                        </div>
-                        <div class="text-xs italic">
-                            ⭐⭐⭐ (3 Avaliações)
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-sm">
-                    descrição
-                </div>
-
-            </div>
-            <!-- LIVRO -->
-            <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
-
-                <div class="flex">
-
-                    <div class="w-1/3">
-                        imagem
-                    </div>
-
-                    <div>
-                        <a href="/livro.php" class="font-semibold hover:underline">
-                            titulo
-                        </a>
-                        <div class="text-xs italic">
-                            autor
-                        </div>
-                        <div class="text-xs italic">
-                            ⭐⭐⭐ (3 Avaliações)
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-sm">
-                    descrição
                 </div>
 
             </div>
 
-        </section>
+            <div class="text-sm text-justify mt-2">
+                <?= $livro['Descrição'] ?>
+            </div>
+
+        </div>
+
 
     </main>
 
