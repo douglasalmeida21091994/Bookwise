@@ -1,10 +1,12 @@
 <?php
 
-require 'dados.php';
+echo "SEMPRE VAI CAIR AQUI NO INDEX.PHP";
 
-$view = "index";
+// controlador padrão
+$controller = 'index';
 
-require 'views/templates/app.php';
+if (isset($_SERVER['PATH_INFO'])) {
+    $controller = str_replace('/', '', $_SERVER['PATH_INFO']);
+}
 
-?>
-
+require "controllers/{$controller}.controller.php";
