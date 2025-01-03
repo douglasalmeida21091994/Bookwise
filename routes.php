@@ -1,22 +1,21 @@
 <?php
 
-// controlador padrão
-$controller = 'index';
+function carregarController() {
 
+    $controller = str_replace('/', '', parse_url($_SERVER['REQUEST_URI']) ['path']);
+    // dd($uri);
+    
+    if(!$controller) $controller = 'index';
+    
+    if(!file_exists("controllers/{$controller}.controller.php")) {
+    
+        http_response_code(404);
+        header("Location: index");
+        die();
+    }
+    
+    require "controllers/{$controller}.controller.php";
 
-if (isset($_SERVER['PATH_INFO'])) {
-    $controller = str_replace('/', '', $_SERVER['PATH_INFO']);
 }
 
-$uri = str_replace('/', '', parse_url($_SERVER['REQUEST_URI']));
-
-
-if(!file_exists("controllers/{$controller}.controller.php")) {
-
-    http_response_code(404);
-    echo "A página não existe!";
-    die();
-}
-
-// require "controllers/{$controller}.controller.php";
-
+carregarController();
