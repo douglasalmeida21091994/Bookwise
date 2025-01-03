@@ -3,8 +3,6 @@
 // pega os dados
 require 'dados.php';
 
-// chama a view
-$view = "index";
+view('index', compact('livros')); // usei esse pois o nome é igual ao nome da variável
 
-require 'views/templates/app.php';
-
+// ['livros' => $livros]
