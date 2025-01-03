@@ -1,12 +1,7 @@
 <?php
 
-echo "SEMPRE VAI CAIR AQUI NO INDEX.PHP";
+// echo "SEMPRE VAI CAIR AQUI NO INDEX.PHP";
 
-// controlador padrão
-$controller = 'index';
+require 'functions.php';
 
-if (isset($_SERVER['PATH_INFO'])) {
-    $controller = str_replace('/', '', $_SERVER['PATH_INFO']);
-}
-
-require "controllers/{$controller}.controller.php";
+require 'routes.php';
