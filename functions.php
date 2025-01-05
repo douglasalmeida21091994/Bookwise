@@ -19,7 +19,7 @@ function view($view, $data = []) {
 
 }
 
-
+// apenas um var_dump com pre
 function dd(...$dump)
 {
     echo '<pre>';

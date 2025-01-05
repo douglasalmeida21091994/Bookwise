@@ -1,5 +1,13 @@
 <?php 
 
+$db = new PDO('sqlite:database.sqlite');
+
+$query = $db->query("SELECT * FROM livros");
+
+dd(
+    $query->fetchAll()
+);
+
 $livros = [
     [
         'id' => 1,
