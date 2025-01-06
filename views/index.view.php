@@ -1,3 +1,5 @@
+
+
 <form class="w-full flex space-x-2 mt-6" action="">
 
     <input type="text" name="pesquisar" id="pesquisar" class="border-stone-800 rounded-md bg-stone-900 text-ml focus:outline-none px-2 py-1" placeholder="Pesquisar...">
@@ -22,11 +24,11 @@
                 </div>
 
                 <div class="space-y-1">
-                    <a href="/livro?id=<?= $livro['id'] ?>" class="font-semibold hover:underline">
-                        <?= $livro['titulo'] ?>
+                    <a href="/livro?id=<?= $livro->id ?>" class="font-semibold hover:underline">
+                        <?= $livro->titulo ?>
                     </a>
                     <div class="text-xs italic">
-                        <?= $livro['autor'] ?>
+                        <?= $livro->autor?>
                     </div>
                     <div class="text-xs italic">
                         ⭐⭐⭐ (3 Avaliações)
@@ -36,7 +38,7 @@
             </div>
 
             <div class="text-sm text-justify mt-2">
-                <?= $livro['Descrição'] ?>
+                <?= $livro->descricao ?>
             </div>
 
         </div>

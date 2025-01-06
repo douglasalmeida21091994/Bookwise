@@ -1,19 +1,12 @@
 <?php
 
-// pega os dados
-require 'dados.php';
-
 $id = $_REQUEST['id'];
 
-// $filtrado = array_filter($livros, function ($l) use ($id) {
+$db = new DB;
 
-//     return $l['id'] == $id;
-    
-// });
+$livro = $db->livros($id)[0];
 
-$filtrado = array_filter($livros, fn ($l) => $l['id'] == $id);
-
-$livro = array_pop($filtrado);
+// dd($livro);
 
 view('livro', compact('livro'));
 

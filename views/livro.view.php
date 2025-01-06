@@ -1,4 +1,4 @@
-<?= $livro['titulo'] ?>
+<!-- <?= $livro->titulo ?> -->
 
 <!-- LIVRO -->
 <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
@@ -10,11 +10,11 @@
         </div>
 
         <div class="space-y-1">
-            <a href="/livro?id=<?= $livro['id'] ?>" class="font-semibold hover:underline">
-                <?= $livro['titulo'] ?>
+            <a href="/livro?id=<?= $livro->id ?>" class="font-semibold hover:underline">
+                <?= $livro->titulo ?>
             </a>
             <div class="text-xs italic">
-                <?= $livro['autor'] ?>
+                <?= $livro->autor ?>
             </div>
             <div class="text-xs italic">
                 ⭐⭐⭐ (3 Avaliações)
@@ -24,7 +24,7 @@
     </div>
 
     <div class="text-sm text-justify mt-2">
-        <?= $livro['Descrição'] ?>
+        <?= $livro->descricao ?>
     </div>
 
 </div>
