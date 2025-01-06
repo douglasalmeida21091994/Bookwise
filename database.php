@@ -26,7 +26,7 @@ class DB {
             $livro->id = $item['id'];
             $livro->titulo = $item['titulo'];
             $livro->autor = $item['autor'];
-            $livro->descricao = $item['descricao'];
+            $livro->descricao = $item['descricao'];           
 
             $retorno [] = $livro;
             
