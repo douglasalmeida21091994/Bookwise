@@ -1,6 +1,6 @@
 <?php
 
-// echo "SEMPRE VAI CAIR AQUI NO INDEX.PHP";
+require 'database.php';
 
 require 'functions.php';
 
